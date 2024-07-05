@@ -1,0 +1,1273 @@
+/* CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body, p, input, textarea, select, button {
+    font-family: Arial, sans-serif;
+}
+/* Mengatur font family untuk nama Anda */
+.name {
+    /* Misalnya, menggunakan font family Times New Roman */
+    font-family: "Times New Roman", serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a192f;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    position: fixed;
+    /* Ini Adalah Bagian Navbar Color  */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #030027;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    animation: slideUp 1s forwards;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight .5s ease forwards;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideUp .5s ease forwards;
+}
+
+.navbar a:nth-child(1) {
+    animation: slideLeft 0.5s forwards 0.1s;
+}
+
+.navbar a:nth-child(2) {
+    animation: slideLeft 0.5s forwards 0.2s;
+}
+
+.navbar a:nth-child(3) {
+    animation: slideLeft 0.5s forwards 0.3s;
+}
+
+.navbar a:nth-child(4) {
+    animation: slideLeft 0.5s forwards 0.4s;
+}
+
+.navbar a:nth-child(5) {
+    animation: slideLeft 0.5s forwards 0.5s;
+}
+
+.navbar a:hover {
+    color: #e0e0e0;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background: url(images/Blue.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: .7s;
+    margin-left: -10x;
+    /* Menyesuaikan jarak dengan "I'm a" */
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+}
+
+.home-content h3 span {
+    color: #0ef;
+    /* Ini dia bangsat JS nya" */
+    margin-left: 0px;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .1s;
+}
+
+.home-content p {
+    font-size: 20px;
+    /* Ini dia bangsat text paragraph di home nya" */
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: .1s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    border-radius: 50%;
+    animation: slideLeftandFade .9s ease forwards;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Menambahkan efek transisi */
+}
+
+.home-sci a:hover {
+    background-color: #0ef;
+    /* Mengubah warna background saat dihover */
+    color: #081b29;
+    /* Mengubah warna teks saat dihover */
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.7), 0 0 20px rgba(0, 238, 255, 0.5), 0 0 30px rgba(0, 238, 255, 0.3), 0 0 40px rgba(0, 238, 255, 0.1);
+    /* Menambahkan efek glowing */
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    animation: slideUp .9s ease forwards;
+    background-color: transparent;
+    /* Mengubah warna background saat dihover menjadi transparan */
+    color: #0ef;
+    /* Mengubah warna teks saat dihover */
+    border: 2px solid #0ef;
+    /* Mengubah border saat dihover */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-box:hover {
+    background-color: #0ef;
+    /* Mengubah warna background saat dihover */
+    color: #081b29;
+    /* Mengubah warna teks saat dihover */
+    border: 2px solid #0ef;
+    /* Mengubah border saat dihover */
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.7), 0 0 20px rgba(0, 238, 255, 0.5), 0 0 30px rgba(0, 238, 255, 0.3), 0 0 40px rgba(0, 238, 255, 0.1);
+    /* Menambahkan efek glowing */
+
+}
+
+.profile-container {
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 50%;
+    animation: floatAnimation 3s infinite alternate;
+    box-shadow: 0 0 20px rgba(173, 216, 230, 0.7), 0 0 40px rgba(173, 216, 230, 0.5), 0 0 60px rgba(173, 216, 230, 0.3), 0 0 80px rgba(173, 216, 230, 0.1);
+    z-index: 0;
+    /* Atur z-index yang cukup tinggi */
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-radius: 50%;
+    border: 0px solid rgba(255, 255, 255, 0.8);
+}
+
+.profile-container:hover .profile-image {
+    transform: scale(1.1);
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeftandFade {
+    0% {
+        transform: translateX(150px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+    }
+}
+
+.about {
+    padding: 50px;
+    background-color: #0a192f;
+    text-align: center;
+    position: relative;
+    color: #ffff;
+    margin-top: 10px;
+}
+
+.about-title {
+    font-size: 3.5rem;
+    /* Menyesuaikan ukuran font dengan judul di My Services */
+    color: white;
+    /* Mengatur warna teks */
+    margin-top: 50px;
+    margin-bottom: 2rem;
+    text-align: center;
+    /* Posisikan teks di tengah */
+    position: absolute;
+    /* Menggunakan posisi absolut agar dapat ditempatkan di atas konten lain */
+    top: 10%;
+    /* Posisi vertikal di tengah */
+    left: 50%;
+    /* Posisi horizontal di tengah */
+    transform: translate(-50%, -50%);
+    /* Geser ke atas dan kiri sebesar setengah ukuran konten untuk membuatnya tepat di tengah */
+    z-index: 0;
+    /* Mengatur z-index agar tampil di atas konten lain */
+}
+
+.about-title span {
+    color: #0ef;
+    /* Warna biru untuk kata kedua */
+    font-size: 3.5rem;
+    margin-left: 1rem;
+    /* Menambahkan spasi di sebelah kiri "Me" */
+    margin-right: 1rem;
+    /* Menambahkan spasi di sebelah kanan "Me" */
+}
+
+.about-content {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+    grid-gap: 40px;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.text {
+    color: rgb(255, 255, 255);
+    /*Ini adalah warna Tude Arya Asmadi Jaya */
+    font-size: 20px;
+    /* margin-bottom: 10px; */
+    flex: 1;
+    text-align: left;
+    /* margin: 50px; */
+    /* Tambahkan margin */
+    /* padding: 50px; */
+    /* Tambahkan padding */
+}
+
+.text.text-w-p {
+    margin-bottom: 10px;
+    margin: 50px;
+    padding: 50px;
+}
+
+.text-typed {
+    font-size: 30px;
+    margin-right: 20px;
+    word-wrap: break-word;
+    /* Memaksa teks untuk melanjutkan ke baris baru jika tidak muat di dalam container */
+}
+
+.text p {
+    color: rgb(255, 255, 255);
+    /*Ini adalah warna Pragraph */
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.6;
+    font-weight: lighter;
+    font-family: Arial;
+    letter-spacing: 0px;
+    /* Spasi antar kata di paragraph */
+
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 350px;
+    /* adjust as needed */
+    height: 350px;
+    /* adjust as needed */
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.download-button {
+    margin-top: 20px;
+    /* Menambahkan jarak antara paragraf dan tombol */
+}
+
+.download-button a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #081b29;
+    /* Sesuaikan warna background sesuai kebutuhan */
+    border-radius: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    /* Sesuaikan warna teks dengan desain keseluruhan */
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    animation: slideUp .9s ease forwards;
+    background-color: transparent;
+    /* Mengubah warna background saat dihover menjadi transparan */
+    color: #0ef;
+    /* Mengubah warna teks saat dihover */
+    border: 2px solid #0ef;
+    /* Mengubah border saat dihover */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.download-button a:hover {
+    background-color: #0ef;
+    /* Mengubah warna background saat dihover */
+    color: #081b29;
+    /* Mengubah warna teks saat dihover */
+    border: 2px solid #0ef;
+    /* Mengubah border saat dihover */
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.7), 0 0 20px rgba(0, 238, 255, 0.5), 0 0 30px rgba(0, 238, 255, 0.3), 0 0 40px rgba(0, 238, 255, 0.1);
+    /* Menambahkan efek glowing */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#services {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+    margin-top: -40px;
+    text-align: center;
+}
+
+.sub-title {
+    font-size: 60px;
+    padding-bottom: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sub-title span {
+    color: #0ef;
+}
+
+.service-container {
+    flex: 1;
+    padding: 100px;
+    text-align: center;
+
+}
+.service-item {
+    flex: 1 1 calc(33.33% - 20px);
+    padding: 30px;
+    border: 2px solid blue;
+    /* Border untuk setiap item layanan */
+    border-radius: 10px;
+    /* Opsional: membuat border melengkung */
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    /* Transisi untuk efek border dan box-shadow */
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+    /* Efek glow dengan warna biru muda */
+}
+
+.service-item:hover {
+    border-color: #007bff;
+    /* Ubah warna border saat dihover */
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.7);
+    /* Efek glow lebih kuat saat dihover */
+
+}
+
+.services-list {
+    display: flex;
+    grid-gap:30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.services-list div {
+    background-color: transparent;
+    font-size: 13.5px;
+    border-right: 10px;
+    border-radius: 20px;
+    transition: background-color 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #012290f7,
+        1px 1px 40px #0053b8f7,
+}
+
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-list div a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+.read {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+    animation-delay: 0.5s;
+    box-shadow: 0 5px #0ef,
+        0 0 25px #0ef;
+}
+
+.read:hover {
+    box-shadow: 0 0 5 px cyan,
+        0 0 25px cyan, 0 0 50px cyan,
+        0 0 100px cyan, 0 0 200px cyan,
+}
+
+.services-list div:hover {
+    transform: translateY(-10px);
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container1 {
+    min-height: 500px;
+    padding: 0 90px 75px 90px;
+}
+
+.heading1 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 50px;
+    font-family: Poppins;
+}
+
+.skills-wrapper {
+    display: flex;
+}
+
+.skills-wrapper .skills-container {
+    width: 50%;
+    
+}
+
+.radial-bars-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.radial-bars-wrapper .radial-bars {
+    width: 50%;
+}
+
+.bar {
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.technical-bars .bar {
+    margin-top: 40px;
+}
+
+.technical-bars .bar:first-child {
+    margin-top: 0;
+}
+
+.technical-bars .bar:last-child {
+    margin-bottom: 0;
+}
+
+.technical-bars .bar .info {
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.technical-bars .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.technical-bars .bar .progress-line {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: #000000;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0, 5, 1) forwards;
+    transform-origin: left;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.technical-bars .bar .progress-line span {
+    height: 100%;
+    background-color: #0ef;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.progress-line .bx{
+    position: absolute;
+    top: -60px;
+}
+
+.progress-line.adobe-family span {
+    width: 90%;
+}
+
+.progress-line.html span {
+    width: 80%;
+}
+
+.progress-line.css span {
+    width: 75%;
+}
+
+.progress-line.javascript span {
+    width: 70%;
+}
+
+.progress-line.mikrotik span {
+    width: 85%;
+}
+
+.progress-line span::after {
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+.progress-line.adobe-family span::after {
+    content: "90%";
+}
+
+.progress-line.html span::after {
+    content: "80%";
+}
+
+.progress-line.css span::after {
+    content: "75%";
+}
+
+.progress-line.javascript span::after {
+    content: "70%";
+}
+
+.progress-line.mikrotik span::after {
+    content: "85%";
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+.radial-bars {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.radial-bars {
+    width: 50%;
+    height: 170px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.radial-bars svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 120px;
+    height: 160px;
+}
+
+.radial-bars .progress-bar {
+    stroke-width: 10;
+    stroke: black;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    animation: animate-bar 1s linear forwards;
+}
+
+@keyframes animate-bar {
+    100% {
+        stroke-dashoffset: -1;
+    }
+}
+
+.path {
+    stroke-width: 10;
+    stroke: #0ef;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+
+.path-1 {
+    animation: animate-path1 1s 1s linear forwards;
+}
+
+.path-2 {
+    animation: animate-path2 1s 1s linear forwards;
+}
+
+.path-3 {
+    animation: animate-path3 1s 1s linear forwards;
+}
+
+.path-4 {
+    animation: animate-path4 1s 1s linear forwards;
+}
+
+
+@keyframes animate-path1 {
+    100% {
+        stroke-dashoffset: 50;
+        ;
+    }
+}
+
+@keyframes animate-path2 {
+    100% {
+        stroke-dashoffset: 175;
+        ;
+    }
+}
+
+@keyframes animate-path3 {
+    100% {
+        stroke-dashoffset: 125;
+        ;
+    }
+}
+
+@keyframes animate-path4 {
+    100% {
+        stroke-dashoffset: 75;
+        ;
+    }
+}
+
+.radial-bars .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.radial-bars .text {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.my-project {
+    text-align: center;
+    padding: 50px 0;
+
+}
+
+.sub-title {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Jarak antar container */
+}
+
+.project-item {
+    background-color: #2D3A45;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0); /* Shadow awal (tidak terlihat) */
+    transition: all 0.3s ease; /* Transisi untuk transformasi */
+    top: 0;
+}
+
+.project-container .project-item:hover {
+    top: -10px;
+}
+
+.project-item:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #0ef; /* Shadow saat dihover */
+}
+
+.project-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    margin-bottom: 20px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.project-item p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+    
+}
+
+/* Modal Content (image) */
+.modal-content {
+    position: fixed; /* Menggunakan posisi tetap */
+    top: 55%; /* Mengatur posisi di tengah vertikal */
+    left: 50%; /* Mengatur posisi di tengah horizontal */
+    transform: translate(-50%, -50%); /* Memindahkan ke tengah container */
+    max-width: 100%; /* Lebar maksimum */
+    max-height: 80%; /* Tinggi maksimum */
+    z-index: 2; /* Lebih tinggi dari background modal */
+}
+
+/* Caption of Modal Image */
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from { transform: translate(-50%, -50%) scale(0); } /* Mulai dari skala 0 dan di tengah */
+    to { transform: translate(-50%, -50%) scale(1); } /* Hingga skala 1 dan tetap di tengah */
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.project-item {
+    position: relative; /*Ini Video Pura Geger*/
+    overflow: hidden;
+    background-color: #2D3A45;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    margin: 20px;
+}
+
+.project-item .video-player-container-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.project-item .video-thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 0px;
+}
+
+.project-item .video-thumbnail img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-item .video-thumbnail .play-btn {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+.project-item .video-thumbnail .play-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 20px;
+    border-color: transparent transparent transparent #2D3A45;
+}
+
+.project-item .video-thumbnail:hover .play-btn {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.project-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 1em;
+    color: #ccc;
+
+}
+
+.project-item .video-player-container {
+    width: 1080px; /* Atur lebar video sesuai kebutuhan */
+    height: 720px; /* Biarkan tinggi mengikuti proporsi */
+    object-fit: contain; /* Atur objek fit untuk menjaga proporsi video */
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+    overflow: auto; /* Enable scroll if needed */
+    animation: zoom 0.3s ease; /* Terapkan animasi zoom */
+
+}
+
+.project-item .video-player-container .video-player {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.project-item .video-player-container .close {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.contact-container {
+    width: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 0 2rem;
+}
+
+.title-contact {
+    font-size: 60px; /*Contact Me Judul*/
+    padding-top: 50px;
+    padding-bottom: 40px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom:60px;
+}
+
+.title-contact span {
+    color: #0ef;
+}
+
+.contact-info {
+    flex: 1; /*Get In Touch*/
+    text-align: left;
+    font-size: 2rem;
+}
+
+.contact-info p {
+    font-size: 1rem; /* Ukuran teks */
+    line-height: 1.6; /* Tinggi baris */
+    margin-bottom: 0.5rem; /* Margin bawah */
+    margin-top: 0.5rem;
+    color: #ffffff; /* Warna teks */
+    text-align: justify;
+}
+
+.contact-info p i {
+    margin-right: 0.5rem; /* Ubah margin kanan untuk ikon */
+    color: #ffffff; /* Ubah warna ikon */
+}
+
+.contact-info h3 {
+    margin-top: 0;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.contact-info ul li i {
+    margin-right: 0.5rem;
+}
+
+.social-icons a {
+    margin-right: 1rem;
+    color: #00FFFF;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+    /* Transisi warna dan transformasi */
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+    /* Mengubah warna ikon saat dihover */
+    transform: scale(1.2); /* Contoh efek perbesaran saat dihover */
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #1F2935;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #2D3A45;
+    color: #FFF;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+/* CSS */
+.submit-button {
+    background-color: #fefefe;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #0ef;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    font-family: Arial, sans-serif; /* Menggunakan Arial sebagai font utama */
+    /* Tambahkan properti lain sesuai kebutuhan */
+}
+.contact-form input[type="submit"],
+.contact-form button[type="submit"] {
+    font-family: Arial, sans-serif;
+    /* Tambahkan properti lain sesuai kebutuhan */
+}
+
+.footer {
+    background-color: #1F2935;
+    color: #FFF;
+    text-align: center;
+    padding: 1rem 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.p-100{
+    padding: 100px;
+}
+
+.pb-0{
+    padding-bottom: 0 !important;
+}
+
+.p-0{
+    padding: 0 !important;
+}
+
+.mt-0{
+    margin-top: 0 !important;
+}
+
+/* Gaya untuk tombol Scroll to Top */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white; /* Warna teks */
+    text-align: center;
+    line-height: 0px;
+    font-size: 50px;
+    cursor: pointer;
+    border-radius: 50px;
+    display: none; /* Sembunyikan tombol secara default */
+    transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Tambahkan transition untuk efek glow */
+    transition: opacity 0.3s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  
+  .scroll-to-top:hover {
+    box-shadow: 0px 0px 20px #0ef; /* Efek glow saat dihover */
+    background-color: #0ef;
+  }
+  
