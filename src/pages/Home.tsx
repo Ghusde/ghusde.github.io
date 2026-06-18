@@ -594,7 +594,7 @@ export default function Home({ lang }: HomeProps) {
       <Section title={t.profesionalprofile} id="Profesional Profile">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
           <InfoItem icon={<GraduationCap size={15} className="text-zinc-400 dark:text-zinc-500" />} text={lang === 'id' ? 'S1 Sistem Komputer' : 'B.Sc. Computer Systems'} />
-          <InfoItem icon={<Mail size={15} className="text-zinc-400 dark:text-zinc-500" />} text="rideoz.official@gmail.com" href="mailto:ghustude182@gmail.com" />
+          <InfoItem icon={<Mail size={15} className="text-zinc-400 dark:text-zinc-500" />} text="ghustude182@gmail.com" href="mailto:ghustude182@gmail.com" />
           <InfoItem icon={<MapPin size={15} className="text-zinc-400 dark:text-zinc-500" />} text="Bali, Indonesia" href="https://www.google.com/maps/search/?api=1&query=Mengwi%2C+Bali%2C+Indonesia" />
           <InfoItem
             icon={<Clock size={15} className="text-zinc-400 dark:text-zinc-500" />}
