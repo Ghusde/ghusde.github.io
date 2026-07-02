@@ -85,6 +85,8 @@ const ROLE_PAIRS = [
   // tambah/hapus bebas di sini
 ];
 
+type CarouselPhase = 'idle' | 'out' | 'in';
+
 function ProfileCarousel() {
   const [idx, setIdx] = useState(0);
   const [phase, setPhase] = useState<CarouselPhase>('idle');
@@ -338,7 +340,7 @@ interface TimelineEntry {
   title: (t: typeof tr.en) => string;
   type: (t: typeof tr.en) => string;
   period: string;
-  bullets: string[];
+  bullets: { en: string[]; id: string[] };
 }
 
 interface TimelineGroup {
@@ -360,14 +362,24 @@ const experienceData: TimelineGroup[] = [
       title: () => 'IT Operasional Support',
       type: (t) => t.fulltime,
       period: 'May 2026 – Present',
-      bullets: [
-        'First-level IT support across 6 F&B outlets and Head Office with structured ticketing.',
-        'Configure and maintain MikroTik RouterOS, switches, and access points across all sites.',
-        'Manage DVR/NVR CCTV systems end-to-end, maintaining 24/7 security coverage.',
-        'Administer ESB FnB POS (Lite & OMS) with SSL management and real-time incident response.',
-        'Implement MDM for company-owned Android/iOS devices across outlets and Head Office.',
-        'Maintain IT documentation including troubleshooting logs, diagrams, and configuration records.',
-      ],
+      bullets: {
+        en: [
+          "Deliver first-level IT support across 6 F&B outlets and Head Office via the company's internal enterprise ticketing platform — diagnosing hardware, software, and network faults, and escalating complex issues to IT management with accurate documentation.",
+          'Configure and maintain network infrastructure including MikroTik RouterOS, switches, access points, VPN for CCTV port forwarding, and guest wifi to ensure stable connectivity across all sites during peak operational hours.',
+          'Manage Hikvision DVR-based CCTV systems across 6 outlets (~20 cameras per outlet, ~120 total) — installation, configuration, health monitoring, and fault isolation — maintaining 24/7 security coverage.',
+          'Support ESB FnB POS operational configuration and manage SSL certificate settings at the network level to prevent connectivity failures on integrated devices (e.g., barcode scanners), ensuring uninterrupted point-of-sale operations.',
+          'Administer Mobile Device Management (MDM) via Google Workspace (GCWP) at scale — managing device roles, accounts, remote backup/wipe for lost or compromised devices, proxy restrictions to limit device usage to work-relevant activity, and application control to prevent unauthorized software installation.',
+          'Maintain detailed IT documentation including troubleshooting logs, infrastructure diagrams, and configuration records for audit and operational continuity.',
+        ],
+        id: [
+          'Memberikan dukungan IT tingkat pertama di 6 outlet F&B dan Head Office melalui sistem ticketing enterprise internal perusahaan — mendiagnosis gangguan hardware, software, dan jaringan, serta melakukan eskalasi masalah kompleks ke manajemen IT dengan dokumentasi yang akurat.',
+          'Mengonfigurasi dan memelihara infrastruktur jaringan termasuk MikroTik RouterOS, switch, access point, VPN untuk port forwarding CCTV, dan guest wifi untuk memastikan konektivitas stabil di seluruh outlet selama jam operasional puncak.',
+          'Mengelola sistem CCTV DVR Hikvision di 6 outlet (±20 kamera per outlet, ±120 total) — instalasi, konfigurasi, monitoring kondisi, dan isolasi gangguan — menjaga cakupan keamanan 24/7.',
+          'Mendukung konfigurasi operasional ESB FnB POS dan mengelola pengaturan sertifikat SSL di level jaringan untuk mencegah kegagalan koneksi pada perangkat yang terintegrasi (misalnya barcode scanner), memastikan operasional point-of-sale berjalan tanpa gangguan.',
+          'Mengadministrasikan Mobile Device Management (MDM) melalui Google Workspace (GCWP) dalam skala besar — mengelola role perangkat, akun, remote backup/wipe untuk perangkat yang hilang atau disalahgunakan, pembatasan proxy untuk membatasi penggunaan perangkat hanya untuk hal yang relevan dengan pekerjaan, dan kontrol aplikasi untuk mencegah instalasi software yang tidak sah.',
+          'Memelihara dokumentasi IT secara detail termasuk log troubleshooting, diagram infrastruktur, dan catatan konfigurasi untuk keperluan audit dan kelangsungan operasional.',
+        ],
+      },
     }],
   },
   {
@@ -380,12 +392,20 @@ const experienceData: TimelineGroup[] = [
       title: () => 'IT Support',
       type: (t) => t.fulltime,
       period: 'May 2025 – May 2026',
-      bullets: [
-        'Provided first-level technical assistance, resolving hardware and software faults.',
-        'Configured and troubleshot booking systems for guest-facing reservation services.',
-        'Collaborated with developers on system performance issues and UI/UX improvements.',
-        'Managed digital asset updates and system content in coordination with management.',
-      ],
+      bullets: {
+        en: [
+          'Provided first-level IT support to internal staff, resolving hardware and software issues to maintain smooth daily operations.',
+          "Managed the company's tour & travel booking system via backend CMS, updating tour packages, schedules, pricing, and listings to keep operational data accurate and up to date.",
+          'Trained internal admin users on CMS and booking system workflows, improving team adoption and reducing repetitive support requests.',
+          'Performed QA testing on web features and updates delivered by the development team, identifying bugs and functionality issues prior to release, and reported findings with clear reproduction steps to support smoother release cycles.',
+        ],
+        id: [
+          'Memberikan dukungan IT tingkat pertama kepada staf internal, menyelesaikan masalah hardware dan software untuk menjaga kelancaran operasional harian.',
+          'Mengelola sistem booking tour & travel perusahaan melalui backend CMS, memperbarui paket tur, jadwal, harga, dan listing untuk menjaga akurasi data operasional.',
+          'Melatih admin internal terkait alur kerja CMS dan sistem booking, meningkatkan adopsi tim dan mengurangi permintaan dukungan yang repetitif.',
+          'Melakukan QA testing pada fitur dan pembaruan web yang dikembangkan oleh tim developer, mengidentifikasi bug dan masalah fungsionalitas sebelum rilis, serta melaporkan temuan dengan langkah reproduksi yang jelas untuk mendukung siklus rilis yang lebih lancar.',
+        ],
+      },
     }],
   },
   {
@@ -398,12 +418,22 @@ const experienceData: TimelineGroup[] = [
       title: () => 'IT Officer',
       type: (t) => t.fulltime,
       period: 'Jun 2024 – Apr 2025',
-      bullets: [
-        'Maintained LAN/switch systems, servers, and CCTV with zero unplanned downtime.',
-        'Supported POS terminals, EDC payment devices, and cloud email in a guest-facing environment.',
-        'Performed structured cabling, bandwidth monitoring, and infrastructure optimization.',
-        'Liaised with vendors on IT procurement and asset deployment.',
-      ],
+      bullets: {
+        en: [
+          'Managed NVR-based IP CCTV system with 52 cameras across the property, ensuring full surveillance coverage and zero unplanned downtime through proactive monitoring and maintenance.',
+          'Supported POS system (Quinos) and EDC payment devices, along with Google Workspace administration, directly maintaining guest-facing service continuity.',
+          'Configured and managed MikroTik network infrastructure including VLAN segmentation and bandwidth management, complemented by Ruijie Reyee cloud-based networking for centralized monitoring and control.',
+          'Performed structured cabling maintenance and installation for new endpoints and switch expansions, following SOP to ensure clean, reliable, and scalable network infrastructure.',
+          'Acted as first-level technical coordinator with hardware and ISP vendors, escalating unresolved issues to management to support timely procurement and infrastructure decisions.',
+        ],
+        id: [
+          'Mengelola sistem CCTV IP berbasis NVR dengan 52 kamera di seluruh properti, memastikan cakupan pengawasan penuh dan zero unplanned downtime melalui monitoring dan maintenance proaktif.',
+          'Mendukung sistem POS (Quinos) dan perangkat pembayaran EDC, beserta administrasi Google Workspace, yang secara langsung menjaga kelangsungan layanan guest-facing.',
+          'Mengonfigurasi dan mengelola infrastruktur jaringan MikroTik termasuk segmentasi VLAN dan manajemen bandwidth, dilengkapi dengan jaringan cloud Ruijie Reyee untuk monitoring dan kontrol terpusat.',
+          'Melakukan maintenance dan instalasi structured cabling untuk endpoint baru dan penambahan switch, mengikuti SOP untuk memastikan infrastruktur jaringan yang rapi, andal, dan scalable.',
+          'Bertindak sebagai koordinator teknis tingkat pertama dengan vendor hardware dan ISP, melakukan eskalasi masalah yang belum terselesaikan ke manajemen untuk mendukung keputusan procurement dan infrastruktur yang tepat waktu.',
+        ],
+      },
     }],
   },
   {
@@ -416,12 +446,22 @@ const experienceData: TimelineGroup[] = [
       title: () => 'IT / Technical NOC',
       type: (t) => t.fulltime,
       period: 'Dec 2022 – Apr 2024',
-      bullets: [
-        'Monitored B2B network operations and service availability per NOC protocols.',
-        'Designed regional network route documentation and ODP mapping for fiber-optic planning.',
-        'Supported FTTH last-mile installations and validated link quality for SLA compliance.',
-        'Coordinated with field technicians on network deployment and troubleshooting.',
-      ],
+      bullets: {
+        en: [
+          'Monitored full site-by-site B2B network traffic via Winbox following ISP standards, logging incidents through Trello and escalating unresolved cases to senior engineers per NOC protocol.',
+          'Served as Level 1 provider for a partnership with local BUMDES (village-owned enterprises) delivering internet access to underserved/blind-spot areas, supporting infrastructure for 1,000+ end clients through provided servers.',
+          'Documented and mapped fiber-optic cable routes and ODP locations using Google Earth Enterprise, enabling precise, real-time distance measurement between clients and servers for infrastructure planning.',
+          'Led incident response as NOC lead overseeing field project teams — analyzing network issues, coordinating server-side checks, and scheduling technician dispatch based on troubleshooting analysis for FTTH last-mile installations validated via OTDR, power meter, and OPM.',
+          'Coordinated with field technicians on network deployment, ensuring installations met SLA compliance and quality standards.',
+        ],
+        id: [
+          'Memonitor traffic jaringan B2B secara site-by-site melalui Winbox sesuai standar ISP, mencatat insiden melalui Trello, dan melakukan eskalasi kasus yang belum terselesaikan ke senior engineer sesuai protokol NOC.',
+          'Berperan sebagai Level 1 provider dalam kerja sama dengan BUMDES (Badan Usaha Milik Desa) setempat untuk menyediakan akses internet ke wilayah blind spot/terpencil, mendukung infrastruktur untuk 1.000+ klien akhir melalui server yang disediakan.',
+          'Mendokumentasikan dan memetakan jalur kabel fiber-optic serta lokasi ODP menggunakan Google Earth Enterprise, memungkinkan pengukuran jarak yang presisi dan real-time antara klien dan server untuk perencanaan infrastruktur.',
+          'Memimpin respons insiden sebagai NOC lead yang mengawasi tim proyek lapangan — menganalisis gangguan jaringan, mengoordinasikan pengecekan sisi server, dan menjadwalkan penugasan teknisi berdasarkan hasil analisis troubleshooting untuk instalasi FTTH last-mile yang divalidasi melalui OTDR, power meter, dan OPM.',
+          'Berkoordinasi dengan teknisi lapangan terkait deployment jaringan, memastikan instalasi memenuhi kepatuhan SLA dan standar kualitas.',
+        ],
+      },
     }],
   },
 ];
@@ -437,7 +477,7 @@ const educationData: TimelineGroup[] = [
       title: (t) => t.bachelorDegree,
       type: (t) => t.cyberSecurity,
       period: '2018 – 2022',
-      bullets: [],
+      bullets: { en: [], id: [] },
     }],
   },
   {
@@ -450,7 +490,7 @@ const educationData: TimelineGroup[] = [
       title: (t) => t.vocational,
       type: (t) => t.vocationalSub,
       period: '2015 – 2018',
-      bullets: [],
+      bullets: { en: [], id: [] },
     }],
   },
 ];
@@ -468,10 +508,11 @@ const competencies = [
 // ─── Accordion timeline section ───────────────────────────────────────────────
 
 function TimelineSection({
-  groups, t, openRoles, toggleRole, isEducation,
+  groups, t, lang, openRoles, toggleRole, isEducation,
 }: {
   groups: TimelineGroup[];
   t: typeof tr.en;
+  lang: Lang;
   openRoles: Set<string>;
   toggleRole: (id: string) => void;
   isEducation: boolean;
@@ -487,7 +528,8 @@ function TimelineSection({
           <div className="flex flex-col ml-12 border border-zinc-200 dark:border-zinc-800 divide-y divide-zinc-200 dark:divide-zinc-800 rounded-sm overflow-hidden">
             {group.entries.map((entry) => {
               const isOpen = openRoles.has(entry.id);
-              const hasBullets = entry.bullets.length > 0;
+              const bulletsForLang = entry.bullets[lang];
+              const hasBullets = bulletsForLang.length > 0;
               return (
                 <div key={entry.id}>
                   <button
@@ -518,10 +560,10 @@ function TimelineSection({
                   {hasBullets && (
                     <div
                       className="overflow-hidden transition-all duration-300 ease-in-out"
-                      style={{ maxHeight: isOpen ? `${entry.bullets.length * 60}px` : '0px' }}
+                      style={{ maxHeight: isOpen ? `${bulletsForLang.length * 60}px` : '0px' }}
                     >
                       <ul className="px-4 pb-4 pt-1 flex flex-col gap-2 bg-zinc-50 dark:bg-zinc-950">
-                        {entry.bullets.map((b) => (
+                        {bulletsForLang.map((b) => (
                           <li key={b} className="flex gap-2 text-zinc-500 dark:text-zinc-400 text-xs leading-relaxed">
                             <span className="text-zinc-400 dark:text-zinc-600 mt-0.5 flex-shrink-0">›</span>
                             <span>{b}</span>
@@ -655,14 +697,14 @@ export default function Home({ lang }: HomeProps) {
 
       {/* ── Experience ──────────────────────────────────────────── */}
       <Section title={t.experience} id="experience">
-        <TimelineSection groups={experienceData} t={t} openRoles={openRoles} toggleRole={toggleRole} isEducation={false} />
+        <TimelineSection groups={experienceData} t={t} lang={lang} openRoles={openRoles} toggleRole={toggleRole} isEducation={false} />
       </Section>
 
       <Divider />
 
       {/* ── Education ───────────────────────────────────────────── */}
       <Section title={t.education} id="education">
-        <TimelineSection groups={educationData} t={t} openRoles={openRoles} toggleRole={toggleRole} isEducation={true} />
+        <TimelineSection groups={educationData} t={t} lang={lang} openRoles={openRoles} toggleRole={toggleRole} isEducation={true} />
       </Section>
 
       <Divider />
@@ -672,7 +714,7 @@ export default function Home({ lang }: HomeProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[
             {
-              name: lang === 'id' ? 'Infrastruktur CCTV Multi-Outlet' : 'Multi-Outlet CCTV Infrastructure',
+              name: lang === 'id' ? 'Operasional IT Multi-Outlet' : 'Multi-Outlet IT Operations',
               org: 'Baked Bali',
               badge: t.live,
               desc: lang === 'id'
@@ -681,21 +723,21 @@ export default function Home({ lang }: HomeProps) {
               tags: ['DVR/NVR', 'IP Camera', 'CCTV', 'Surveillance'],
             },
             {
-              name: lang === 'id' ? 'Implementasi MDM untuk Pengelolaan Multi-Perangkat' : 'Centralized Device Management Rollout',
-              org: 'Baked Bali',
-              badge: t.live,
+              name: lang === 'id' ? 'Dukungan Platform Booking & QA' : 'Booking Platform Support & QA',
+              org: 'Kantanya Bali Tour',
+              badge: null,
               desc: lang === 'id'
-                ? 'Mengimplementasikan dan mengelola solusi manajemen endpoint pada perangkat Android, iOS, Windows, dan macOS, termasuk penerapan kebijakan keamanan, kontrol aplikasi, registrasi perangkat, serta pengelolaan perangkat secara terpusat.'
-                : 'Implemented and administered endpoint management solutions across Android, iOS, Windows, and macOS devices, enforcing security policies, application control, device enrollment, and centralized fleet management.',
-              tags: ['MDM', 'Windows', 'macOS', 'Policy'],
+                ? 'Mengelola sistem booking tour & travel perusahaan melalui backend CMS, memperbarui paket dan harga, melatih admin internal terkait alur kerja sistem, dan melakukan QA testing untuk memastikan rilis web bebas bug.'
+                : 'Managed the company\'s tour & travel booking system via backend CMS, updating packages and pricing, trained internal admins on system workflows, and performed QA testing to ensure bug-free web releases.',
+              tags: ['CMS', 'Booking System', 'QA', 'Policy'],
             },
        {
               name: lang === 'id' ? 'Sistem Bisnis & Operasional TI' : 'Business Systems & IT Operations',
               org: 'Locca Sea House',
               badge: null,
               desc: lang === 'id'
-                ? 'Menyediakan dukungan operasional dan infrastruktur TI secara menyeluruh, mencakup pengelolaan LAN, switch, server, CCTV, sistem POS, terminal pembayaran EDC, dan layanan berbasis cloud untuk memastikan operasional bisnis berjalan stabil.'
-          : 'Delivered end-to-end IT infrastructure and operational support, maintaining LAN, switching, servers, CCTV, POS systems, EDC payment terminals, and cloud-based services to ensure reliable business operations.',   
+                ? 'Menyediakan dukungan operasional dan infrastruktur TI secara menyeluruh, mencakup LAN, switch, server, CCTV, sistem POS, terminal EDC, dan layanan cloud untuk operasional bisnis yang stabil.'
+                : 'Delivered end-to-end IT infrastructure and operational support, maintaining LAN, switching, servers, CCTV, POS systems, EDC terminals, and cloud-based services for reliable business operations.',   
               tags: ['POS', 'EDC', 'Google Workspace', 'SaaS'],
             },
             {
